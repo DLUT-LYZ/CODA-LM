@@ -1,1 +1,1 @@
-## Automated Evaluation of Large Vision-Language Models on Self-driving Corner Cases**
+## Automated Evaluation of Large Vision-Language Models on Self-driving Corner Cases
