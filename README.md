@@ -1,1 +1,1 @@
-## Automated Evaluation of Large Vision-Language Models on Self-driving Corner Cases
+## CODA-LM: Automated Evaluation of LVLMs on Self-driving Corner Cases
