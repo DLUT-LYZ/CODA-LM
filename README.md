@@ -1,4 +1,4 @@
-## CODA-LM: Automated Evaluation of LVLMs on Self-driving Corner Cases
+# CODA-LM
 [![arXiv](https://img.shields.io/badge/arXiv-2404.10595-b31b1b.svg?style=plastic)](https://arxiv.org/abs/2404.10595) [![arXiv](https://img.shields.io/badge/Web-CODA_LM-blue.svg?style=plastic)](https://coda-dataset.github.io/coda-lm/)
 
 This repository contains the implementation of the paper:
@@ -7,12 +7,7 @@ This repository contains the implementation of the paper:
 > [Yanze Li]()\*, [Wenhua Zhang]()\*, [Kai Chen](https://kaichen1998.github.io)\*, [Yanxin Liu](), [Pengxiang Li](https://scholar.google.com/citations?user=rUp_4RgAAAAJ&hl=en), [Ruiyuan Gao](https://gaoruiyuan.com/), [Lanqing Hong](https://scholar.google.com.sg/citations?user=2p7x6OUAAAAJ&hl=en), [Meng Tian](), [Xinhai Zhao](), [Zhenguo Li](https://scholar.google.com/citations?user=XboZC1AAAAAJ&hl=en&oi=ao), [Dit-Yan Yeung](https://sites.google.com/view/dyyeung), [Huchuan Lu](https://scholar.google.com/citations?user=D3nE0agAAAAJ&hl=en), [Xu Jia](https://stephenjia.github.io/)† <br>
 > *Equal Contribution   †Corresponding Author
 
-<img src="./images/overview.png" width = 60% align=center />
-
-
-
-
-
+<img src="./images/overview.png" style="width: 65%; margin: 0 auto; text-align: center"/>
 
 ## Citation
 
