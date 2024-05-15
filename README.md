@@ -19,7 +19,7 @@ The instructions for downloading CODA-LM are listed as follows:
 2. Download the CODA-LM annotation files and then decompress them in the same root directory.
 
 | Split | Size | Image Source  |  Download  |
-| :---: | :--: | ------------- | :--------: |
+| :---: | :--: | :-----------: | :--------: |
 | Train | 4884 | CODA2022 val  | [HF Hub]() |
 |  Val  | 4384 | CODA2022 test | [HF Hub]() |
 | Test  | 500  | CODA2022 test | [HF Hub]() |
