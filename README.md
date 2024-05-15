@@ -25,12 +25,9 @@ The instructions for downloading CODA-LM are listed as follows:
 | Test  | 500  | CODA2022 test | [HF Hub]() |
 | Mini  |  50  | CODA2022 test | [HF Hub](https://huggingface.co/datasets/KaiChen1998/coda-lm/tree/main/CODA-LM/Mini) |
 
-
-
 Note that:
 
 1. Images of **CODA-LM train** set come from **CODA2022 val** set, while images of **CODA-LM val and test** sets come from **CODA2022 test** set.
-
 2. **CODA-LM mini** set is a 50-image subset of **CODA-LM val** set for demonstration.
 
 After decompression, the data organization is listed as follows:
