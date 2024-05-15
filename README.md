@@ -23,7 +23,7 @@ The instructions for downloading CODA-LM are listed as follows:
 | Train | 4884 | CODA2022 val  | [HF Hub]() |
 |  Val  | 4384 | CODA2022 test | [HF Hub]() |
 | Test  | 500  | CODA2022 test | [HF Hub]() |
-| Mini  |  50  | CODA2022 test | [HF Hub]() |
+| Mini  |  50  | CODA2022 test | [HF Hub](https://huggingface.co/datasets/KaiChen1998/coda-lm/tree/main/CODA-LM/Mini) |
 
 
 
