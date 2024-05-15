@@ -49,11 +49,11 @@ The annotation files contains question-answering pairs for all three tasks as fo
 
 ```
 {
-	"general_perception":{
-	},
-	"region_perception":{
-	},
-	"driving_suggestion": <str>,
+    "general_perception":{
+    },
+    "region_perception":{
+    },
+    "driving_suggestion": <str>,
 }
 ```
 
