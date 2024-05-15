@@ -9,6 +9,62 @@ This repository contains the implementation of the paper:
 
 <img src="./images/overview.png" style="width: 65%; margin: 0 auto; text-align: center"/>
 
+
+
+## Data Preparation
+
+The instructions for downloading CODA-LM is listed as follows:
+
+1. Download the image files following the CODA official instructions [here](https://coda-dataset.github.io/download.html#instructions)
+
+2. Download the CODA-LM annotation files and then decompress in the same root directory.
+
+After decompression, the data organization is listed as follows:
+
+```
+├── val
+│   │── annotations.json
+│   │── images
+│   │   │── *_*.jpg
+├── test
+│   │── annotations.json
+│   │── images
+│   │   │── *_*.jpg
+├── CODA-LM
+│   │── Train
+│   │   │── *_*.json
+│   │── Val
+│   │   │── *_*.json
+│   │── Test
+│   │   │── *_*.json
+│   │── Mini
+│   │   │── *_*.json
+```
+
+
+
+## Data Format
+
+The annotation files contains question-answering pairs for all three tasks as following,
+
+```
+{
+	"general_perception":{
+	},
+	"region_perception":{
+	},
+	"driving_suggestion": <str>,
+}
+```
+
+
+
+## Check Yourself!
+
+
+
+
+
 ## Citation
 
 ```bibtex
