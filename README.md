@@ -62,8 +62,26 @@ The annotation files contains question-answering pairs for all three tasks as fo
 ```
 {
     "general_perception":{
+        "vehicles": [
+            {
+                "description": <str>,
+                "explanation": <str>"
+            },
+        "vulnerable_road_users": [...],
+        "traffic signs": [...],
+        "traffic lights": [...],
+        "traffic cones": [...],
+        "barriers": [...],
+        "other objects": [...],
     },
     "region_perception":{
+        "1": {
+            "description and explanation": <str>,
+            "box": <list of float>,
+            "category_name": <str>
+        },
+        "2": {...},
+        "3": {...}
     },
     "driving_suggestion": <str>,
 }
