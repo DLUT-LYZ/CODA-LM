@@ -13,32 +13,36 @@ This repository contains the implementation of the paper:
 
 ## Data Preparation
 
-The instructions for downloading CODA-LM is listed as follows:
+The instructions for downloading CODA-LM are listed as follows:
 
 1. Download the image files following the CODA official instructions [here](https://coda-dataset.github.io/download.html#instructions)
 
-2. Download the CODA-LM annotation files and then decompress in the same root directory.
+2. Download the CODA-LM annotation files and then decompress them in the same root directory.
+
+Note that:
+
+1. Images of **CODA-LM train** set come from **CODA2022 val** set, while images of **CODA-LM val and test** sets come from **CODA2022 test** set.
+
+2. **CODA-LM mini** set is a 50-image subset of **CODA-LM val** set for demonstration.
 
 After decompression, the data organization is listed as follows:
 
 ```
-├── val
-│   │── annotations.json
+├── val                    -- CODA2022 val (we only use images)
 │   │── images
 │   │   │── *_*.jpg
-├── test
-│   │── annotations.json
+├── test                   -- CODA2022 test (we only use images)
 │   │── images
 │   │   │── *_*.jpg
 ├── CODA-LM
-│   │── Train
-│   │   │── *_*.json
-│   │── Val
-│   │   │── *_*.json
-│   │── Test
-│   │   │── *_*.json
-│   │── Mini
-│   │   │── *_*.json
+│   │── Train              -- CODA-LM train (we use 4884 images from CODA2022 val)
+│   │   │── val_*.json
+│   │── Val                -- CODA-LM val (we use 4384 images from CODA2022 test)
+│   │   │── test_*.json
+│   │── Test               -- CODA-LM test (we use 500 images from CODA2022 test)
+│   │   │── test_*.json
+│   │── Mini               -- CODA-LM mini (a 50-image subset of CODA-LM val)
+│   │   │── test_*.json
 ```
 
 
