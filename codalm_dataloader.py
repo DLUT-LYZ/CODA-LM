@@ -53,7 +53,8 @@ class CODALMDataset(Dataset):
 
     def load_data_list(self):
         data_path = os.path.join(self.data_root, self.version)
-        json_list = sorted(os.listdir(data_path))  # test_0001, ....., val_0001, val_0002, ......
+        json_list = [each for each in os.listdir(data_path) if each.endswith('.json')]
+        json_list = sorted(json_list)  # test_0001, ....., val_0001, val_0002, ......
 
         data_list = []
         for json_name in json_list:
@@ -63,7 +64,7 @@ class CODALMDataset(Dataset):
             
             img_root, img_id = json_name.replace(".json", "").split("_") # test, 0001
 
-            raw_ann_info["img_path"] = os.path.join(self.data_root, "..", img_root, img_id + ".jpg")
+            raw_ann_info["img_path"] = os.path.join(self.data_root, "..", img_root, "images", img_id + ".jpg")
             raw_ann_info["text"] = json_info
             raw_ann_info["prompt"] = {
                 "general_perception": "There is an image of traffic captured from the perspective of the ego car. Please focus on objects that have a great influence on ego car driving behavior in the scene, describe these objects and the reasons why they influence ego car driving.",
@@ -152,7 +153,3 @@ if __name__ == "__main__":
         image_tensor = data['image_numpy']
         rounds = data['round']
         print(rounds)
-    
-
-
-
