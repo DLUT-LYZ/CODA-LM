@@ -24,21 +24,23 @@ def expand2square(pil_img, background_color):
         result.paste(pil_img, ((height - width) // 2, 0))
         return result, width, height
 
-def box_xyxy_expand2square(box, w, h):
-    x1, y1, x2, y2 = box
-    if w == h:
-        return [round(x1 / w, 3), round(y1 / h, 3), round(x2 / w, 3), round(y2 / w, 3)]
-    if w > h:
-        x1, y1, x2, y2 = box
-        y1 += (w - h) // 2
-        y2 += (w - h) // 2
-        box = [round(x1 / w, 3), round(y1 / h, 3), round(x2 / w, 3), round(y2 / w, 3)]
+def box_xyxy_expand2square(box, width, height):
+    x1, y1, w, h = box
+    x2, y2 = x1 + w, y1 + h
+    if width == height:
+        return [round(x1 / width, 3), round(y1 / height, 3), round(x2 / width, 3), round(y2 / height, 3)]
+
+    if width > height:
+        y1 += (width - height) // 2
+        y2 += (width - height) // 2
+        box = [round(x1 / width, 3), round(y1 / width, 3), round(x2 / width, 3), round(y2 / width, 3)]
         return box
-    assert w < h
-    x1, y1, x2, y2 = box
-    x1 += (h - w) // 2
-    x2 += (h - w) // 2
-    box = [round(x1 / w, 3), round(y1 / h, 3), round(x2 / w, 3), round(y2 / w, 3)]
+
+    assert width < height
+    x1 += (height - width) // 2
+    x2 += (height - width) // 2
+    box = [round(x1 / height, 3), round(y1 / height, 3), round(x2 / height, 3), round(y2 / height, 3)]
+    
     return box
 
 # Custom dataset class
