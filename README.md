@@ -84,7 +84,13 @@ The annotation files contains question-answering pairs for all three tasks as fo
 }
 ```
 
-
+## Data Example
+The instructions for Check CODA-LM  examples are listed as follows:
+1. please install torch, numpy
+2. Run th commands as follows
+```
+python dataloader.py --data_root xx/CODA/CODA-LM --version Mini --batch_size 1 --num_workers 8
+```
 
 ## Check Yourself!
 
