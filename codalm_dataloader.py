@@ -47,6 +47,7 @@ class CODALMDataset(Dataset):
                  data_root = 'CODA/CODA-LM',
                  version = 'Mini'):
 
+        assert version in ['Train', 'Val', 'Test', 'Mini']
         self.data_root = data_root
         self.version = version
         self.data_list = self.load_data_list()
@@ -59,7 +60,7 @@ class CODALMDataset(Dataset):
         data_list = []
         for json_name in json_list:
             raw_ann_info = dict()
-            with open(os.path.join(data_path, json_name), "r") as f:
+            with open(os.path.join(data_path, json_name), "r", encoding='UTF-8') as f:
                 json_info = json.load(f)
             
             img_root, img_id = json_name.replace(".json", "").split("_") # test, 0001
@@ -81,12 +82,14 @@ class CODALMDataset(Dataset):
             "round": []
         }
 
-        
+
         # round1:
         res_info = []
         for key, value in data_info["text"]["general_perception"].items():
             if isinstance(value, list):
                 for v in value:
+                    assert "description" in v.keys(), "{} lacks description".format(data_info['img_path'])
+                    assert "explanation" in v.keys(), "{} lacks explanation".format(data_info['img_path'])
                     res_info.append(v["description"])
                     res_info.append(v["explanation"])
             else:
@@ -98,7 +101,8 @@ class CODALMDataset(Dataset):
             "answer": " ".join(res_info)
         })
 
-        # round2；
+        # round2
+        assert "driving_suggestion" in data_info["text"].keys(), "{} lacks driving_suggestion".format(data_info['img_path'])
         parse_data_info["round"].append({
             "question": data_info["prompt"]["driving_suggestion"],
             "answer": data_info["text"]["driving_suggestion"]
@@ -109,6 +113,7 @@ class CODALMDataset(Dataset):
             box = box_xyxy_expand2square(value["box"], width, height)
             box_str = f"<{box[0]}, {box[1]}, {box[2]}, {box[3]}>"
             # import pdb; pdb.set_trace()
+            assert "description and explanation" in value.keys(), "{} lacks description and explanation".format(data_info['img_path'])
             parse_data_info["round"].append({
                 "question": data_info["prompt"]["region_perception"].replace("<boxes>", box_str),
                 "answer": value["description and explanation"]
