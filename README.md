@@ -59,23 +59,24 @@ The annotation files contains question-answering pairs for all three tasks as fo
 ```
 {
     "general_perception":{
-        "vehicles": [
+        "vehicles": [								-- list containing information of all vehicles
             {
-                "description": <str>,
-                "explanation": <str>"
+                "description": <str>,				-- description about a single vehicle
+                "explanation": <str>"				-- explanation why it affects the ego car
             },
-        "vulnerable_road_users": [...],
-        "traffic signs": [...],
-        "traffic lights": [...],
-        "traffic cones": [...],
-        "barriers": [...],
-        "other objects": [...],
+        "vulnerable_road_users": [...],				-- list containing information of all VRUs
+        "traffic signs": [...],						-- list containing information of all traffic signs
+        "traffic lights": [...],					-- list containing information of all traffic lights
+        "traffic cones": [...],						-- list containing information of all traffic cones
+        "barriers": [...],							-- list containing information of all barriers
+        "other objects": [...],						-- list containing information of all other objects
+    	"description and explanation": <str>		-- fluent summarization of information of all categories above
     },
     "region_perception":{
-        "1": {
-            "description and explanation": <str>,
-            "box": <list of float>,
-            "category_name": <str>
+        "1": {										-- region index
+            "description and explanation": <str>,	-- description of road user in the specific region with explanation on why it affects the ego car
+            "box": <list of float>,					-- xywh coordinates
+            "category_name": <str>					-- object category
         },
         "2": {...},
         "3": {...}
@@ -84,7 +85,7 @@ The annotation files contains question-answering pairs for all three tasks as fo
 }
 ```
 
-## Data Example
+## Data Usage
 The instructions for checking CODA-LM (mini set) examples are listed as follows:
 1. Install dependencies including torch and numpy.
 2. Run the following commands.
