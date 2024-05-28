@@ -86,12 +86,58 @@ The annotation files contains question-answering pairs for all three tasks as fo
 ```
 
 ## Data Usage
-The instructions for checking CODA-LM (mini set) examples are listed as follows:
-1. Install dependencies including torch and numpy.
-2. Run the following commands.
-```
-python codalm_dataloader.py --data_root $DATA_ROOT/CODA/CODA-LM --version Mini --batch_size 1 --num_workers 8
-```
+To help users better understand the structure of CODA-LM, we provide a python script to convert our annotations to basic VQA formats, as follows:
+
+1. Download the data and make sure the directory organization follows.
+
+2. Run `convert2vqa.py` as follows:
+
+   ```bash
+   # English
+   python convert2vqa.py --coda_root $CODA_ROOT --codalm_ann_name CODA-LM
+   
+   # Chinese
+   python convert2vqa.py --coda_root $CODA_ROOT --codalm_ann_name CODA-LM-chinese
+   ```
+
+3. After that, the resulting data organization will be like this:
+
+   ```
+   ├── val
+   │   │── images
+   │   │── images_w_bboxes                  -- Images with bboxes drawn for region perception
+   │   │   │── *.jpg
+   ├── test
+   │   │── images
+   │   │── images_w_bboxes                  -- Images with bboxes drawn for region perception
+   │   │   │── *.jpg
+   ├── CODA-LM
+   │   │── Train
+   │   │   │── vqa_anno
+   │   │   │   │── general_perception.json  -- VQA annotations for general perception
+   │   │   │   │── region_perception.json   -- VQA annotations for region perception
+   │   │   │   │── driving_suggestion.json  -- VQA annotations for driving suggestion
+   │   │── Val
+   │   │   │── vqa_anno
+   │   │── Test
+   │   │   │── vqa_anno
+   │   │── Mini
+   │   │   │── vqa_anno
+   ```
+
+4. The basic VQA format saves data sample simply with a dictionary containing `question_id`, `image`, `question`, and `answer`, as follows:
+
+   ```
+   {"question_id": 0, "image": val/images/0001.jpg, "question": <str>, "answer": <str>}
+   {"question_id": 1, "image": val/images/0002.jpg, "question": <str>, "answer": <str>}
+   {"question_id": 2, "image": val/images/0003.jpg, "question": <str>, "answer": <str>}
+   ```
+
+5. Note that for regional perception, there are various possible manners to utilize the bbox annotations. Here we provide a simple implementation by drawing the bboxes with red rectangles on images, which are saved in the `images_w_bboxes` directory.
+
+   ![img](images/visual.png)
+
+
 
 ## Citation
 
