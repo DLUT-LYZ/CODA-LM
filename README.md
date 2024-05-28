@@ -35,10 +35,10 @@ After decompression, the data organization is listed as follows:
 ```
 ├── val                    -- CODA2022 val (we only use images)
 │   │── images
-│   │   │── *_*.jpg
+│   │   │── *.jpg
 ├── test                   -- CODA2022 test (we only use images)
 │   │── images
-│   │   │── *_*.jpg
+│   │   │── *.jpg
 ├── CODA-LM
 │   │── Train              -- CODA-LM train (we use 4884 images from CODA2022 val)
 │   │   │── val_*.json
