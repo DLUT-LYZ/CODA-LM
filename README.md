@@ -88,7 +88,7 @@ The annotation files contains question-answering pairs for all three tasks as fo
 ## Data Usage
 To help users better understand the structure of CODA-LM, we provide a python script to convert our annotations to basic VQA formats, as follows:
 
-1. Download the data and make sure the directory organization follows.
+1. Download the data and make sure the directory organization follows [Data Prepration](https://github.com/DLUT-LYZ/CODA-LM?tab=readme-ov-file#data-preparation).
 
 2. Run `convert2vqa.py` as follows:
 
@@ -131,6 +131,7 @@ To help users better understand the structure of CODA-LM, we provide a python sc
    {"question_id": 0, "image": val/images/0001.jpg, "question": <str>, "answer": <str>}
    {"question_id": 1, "image": val/images/0002.jpg, "question": <str>, "answer": <str>}
    {"question_id": 2, "image": val/images/0003.jpg, "question": <str>, "answer": <str>}
+   ...
    ```
 
 5. Note that for regional perception, there are various possible manners to utilize the bbox annotations. Here we provide a simple implementation by drawing the bboxes with red rectangles on images, which are saved in the `images_w_bboxes` directory.
