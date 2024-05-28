@@ -64,17 +64,17 @@ The annotation files contains question-answering pairs for all three tasks as fo
                 "description": <str>,             -- description about a single vehicle
                 "explanation": <str>"             -- explanation why it affects the ego car
             },
-        "vulnerable_road_users": [...],				    -- list containing information on all VRUs
-        "traffic signs": [...],						        -- list containing information on all traffic signs
-        "traffic lights": [...],					        -- list containing information on all traffic lights
-        "traffic cones": [...],						        -- list containing information on all traffic cones
+        "vulnerable_road_users": [...],           -- list containing information on all VRUs
+        "traffic signs": [...],                   -- list containing information on all traffic signs
+        "traffic lights": [...],                  -- list containing information on all traffic lights
+        "traffic cones": [...],                   -- list containing information on all traffic cones
         "barriers": [...],                        -- list containing information on all barriers
         "other objects": [...],                   -- list containing information on all other objects
-    	"description and explanation": <str>        -- fluent summarization of information on all categories
+    	"description and explanation": <str>      -- fluent summarization of information on all categories
     },
     "region_perception":{
         "1": {                                    -- region index
-            "description and explanation": <str>,	-- description of road users in the specific region with explanation on why it affects the ego car
+            "description and explanation": <str>, -- description of road users in the specific region with explanation on why it affects the ego car
             "box": <list of float>,               -- xywh coordinates
             "category_name": <str>                -- object category
         },
