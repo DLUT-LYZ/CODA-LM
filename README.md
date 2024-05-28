@@ -70,7 +70,7 @@ The annotation files contains question-answering pairs for all three tasks as fo
         "traffic cones": [...],                   -- list containing information on all traffic cones
         "barriers": [...],                        -- list containing information on all barriers
         "other objects": [...],                   -- list containing information on all other objects
-    	"description and explanation": <str>      -- fluent summarization of information on all categories
+    	"description and explanation": <str>      -- summarization of information on all categories
     },
     "region_perception":{
         "1": {                                    -- region index
