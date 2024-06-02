@@ -114,9 +114,9 @@ To help users better understand the structure of CODA-LM, we provide a python sc
    ├── CODA-LM
    │   │── Train
    │   │   │── vqa_anno
-   │   │   │   │── general_perception.json  -- VQA annotations for general perception
-   │   │   │   │── region_perception.json   -- VQA annotations for region perception
-   │   │   │   │── driving_suggestion.json  -- VQA annotations for driving suggestion
+   │   │   │   │── general_perception.jsonl  -- VQA annotations for general perception
+   │   │   │   │── region_perception.jsonl   -- VQA annotations for region perception
+   │   │   │   │── driving_suggestion.jsonl  -- VQA annotations for driving suggestion
    │   │── Val
    │   │   │── vqa_anno
    │   │── Test
