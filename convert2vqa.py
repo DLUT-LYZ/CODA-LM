@@ -97,19 +97,19 @@ if __name__ == '__main__':
         os.makedirs(save_root, exist_ok=True)
 
         # save stage1
-        with open(os.path.join(save_root, 'general_perception.json'), 'w') as file:
+        with open(os.path.join(save_root, 'general_perception.jsonl'), 'w') as file:
             for entry in stage1_all_data:
                 json_str = json.dumps(entry)
                 file.write(json_str + '\n')
 
         # save stage2
-        with open(os.path.join(save_root, 'driving_suggestion.json'), 'w') as file:
+        with open(os.path.join(save_root, 'driving_suggestion.jsonl'), 'w') as file:
             for entry in stage2_all_data:
                 json_str = json.dumps(entry)
                 file.write(json_str + '\n')
 
         # save stage3
-        with open(os.path.join(save_root, 'region_perception.json'), 'w') as file:
+        with open(os.path.join(save_root, 'region_perception.jsonl'), 'w') as file:
             for entry in stage3_all_data:
                 json_str = json.dumps(entry)
                 file.write(json_str + '\n')
