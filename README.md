@@ -128,9 +128,16 @@ To help users better understand the structure of CODA-LM, we provide a python sc
 4. The basic VQA format saves data sample simply with a dictionary containing `question_id`, `image`, `question`, and `answer`, as follows:
 
    ```
+   # for general perception & driving suggestions
    {"question_id": 0, "image": val/images/0001.jpg, "question": <str>, "answer": <str>}
    {"question_id": 1, "image": val/images/0002.jpg, "question": <str>, "answer": <str>}
    {"question_id": 2, "image": val/images/0003.jpg, "question": <str>, "answer": <str>}
+   ...
+
+   # for regional perception
+   {"question_id": 0, "image": val/images/0001_object_1.jpg, "question": <str>, "answer": <str>, "label_name": <str>}
+   {"question_id": 1, "image": val/images/0001_object_2.jpg, "question": <str>, "answer": <str>, "label_name": <str>}
+   {"question_id": 2, "image": val/images/0001_object_3.jpg, "question": <str>, "answer": <str>, "label_name": <str>}
    ...
    ```
 
