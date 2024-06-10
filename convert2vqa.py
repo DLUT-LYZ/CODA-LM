@@ -42,7 +42,7 @@ if __name__ == '__main__':
             stage1_data = dict(
                 question_id=stage1_index,
                 image=os.path.join(img_dir, 'images', img_name),
-                question="There is an image of traffic captured from the perspective of the ego car. Please focus on objects that have a great influence on ego car driving behavior in the scene, describe these objects and the reasons why they influence ego car driving."
+                question="There is an image of traffic captured from the perspective of the ego car. Focus on objects influencing the ego car's driving behavior: vehicles (cars, trucks, buses, etc.), vulnerable road users (pedestrians, cyclists, motorcyclists), traffic signs (no parking, warning, directional, etc.), traffic lights (red, green, yellow), traffic cones, barriers, miscellaneous(debris, dustbin, animals, etc.). You must not discuss any objects beyond the seven categories above. Please describe each object's appearance, position, direction, and explain why it affects the ego car's behavior."
             )
             if split != 'Test':
                 stage1_data['answer'] = json_data['general_perception']['description and explanation']
@@ -55,7 +55,7 @@ if __name__ == '__main__':
             stage2_data = dict(
                 question_id=stage2_index,
                     image=os.path.join(img_dir, 'images', img_name),
-                    question="There is an image of traffic captured from the perspective of the ego car. Please provide driving suggestions for the ego car based on the current scene."
+                    question="There is an image of traffic captured from the perspective of the ego car. Focus on objects influencing the ego car's driving behavior: vehicles (cars, trucks, buses, etc.), vulnerable road users (pedestrians, cyclists, motorcyclists), traffic signs (no parking, warning, directional, etc.), traffic lights (red, green, yellow), traffic cones, barriers, miscellaneous(debris, dustbin, animals, etc.). You must not discuss any objects beyond the seven categories above. Please provide driving suggestions for the ego car based on the current scene."
             )
             if split != 'Test':
                 stage2_data['answer'] = json_data['driving_suggestion']
@@ -81,9 +81,11 @@ if __name__ == '__main__':
                 
                 # prepare annotation
                 stage3_index += 1
+                label_cat =  value['category_name']
                 stage3_data = dict(
                     question_id=stage3_index,
                     image=os.path.join(img_dir, 'images_w_boxes', "{}_object_{}.jpg".format(json_name.split("_")[1][:-5], key)),
+                    label_name=label_cat,
                     question="Please describe the object inside the red rectangle in the image and explain why it affect ego car driving."
                 )
                 if split != 'Test':
