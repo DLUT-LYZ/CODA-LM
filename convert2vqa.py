@@ -81,11 +81,9 @@ if __name__ == '__main__':
                 
                 # prepare annotation
                 stage3_index += 1
-                label_cat =  value['category_name']
                 stage3_data = dict(
                     question_id=stage3_index,
                     image=os.path.join(img_dir, 'images_w_boxes', "{}_object_{}.jpg".format(json_name.split("_")[1][:-5], key)),
-                    label_name=label_cat,
                     question="Please describe the object inside the red rectangle in the image and explain why it affect ego car driving."
                 )
                 if split != 'Test':
