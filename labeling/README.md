@@ -1,4 +1,4 @@
-# Labeling Tool
+# CODA-LM Labeling Tool
 ## Gradio Web UI 
 The instructions for launching a Gradio Web UI of Labeling Tool are listed as follows:
 1. Install dependencies.
