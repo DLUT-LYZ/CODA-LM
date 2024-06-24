@@ -140,6 +140,12 @@ To help users better understand the structure of CODA-LM, we provide a python sc
 
 
 
+# Evaluation
+
+Check [CODA-LM Evaluation](./evaluation) for more details.
+
+
+
 ## Citation
 
 ```bibtex
