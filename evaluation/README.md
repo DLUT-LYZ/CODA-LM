@@ -32,8 +32,8 @@
 1. Insert the ground truth `label name` of each corner case object collected in regional perception.
 
    ```bash
-   # Results will be saved in $ROOT_TO_RESULTS/driving_suggestion_answer_w_label.jsonl
-   python convert2eval.py --reference_path ./CODA-LM/$ROOT_TO_GT --prediction_path $ROOT_TO_RESULTS/driving_suggestion_answer.jsonl
+   # Results will be saved in $ROOT_TO_RESULTS/region_perception_answer_w_label.jsonl
+   python convert2eval.py --reference_path ./CODA-LM/$ROOT_TO_GT --prediction_path $ROOT_TO_RESULTS/region_perception_answer.jsonl
    ```
 
 2. Run evaluation for each task separately. By default, we prompt `gpt-4o-2024-05-13` for evaluation.
