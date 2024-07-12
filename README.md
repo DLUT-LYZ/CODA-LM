@@ -139,6 +139,10 @@ To help users better understand the structure of CODA-LM, we provide a python sc
    ![img](images/visual.png)
 
 
+## Data Annotation
+
+Check [CODA-LM Annotation Tool](./labeling) for more details.
+
 
 # Evaluation
 
