@@ -10,11 +10,10 @@ This repository contains the implementation of the paper:
 <p align="center">
   <img src="./images/overview.png" style="width: 65%; margin: 0 auto; text-align: center"/>
 </p>
-# Update
+
+## Update
 
 - **2024.10**: CODA-LM Test set annotations have been released on [HuggingFace](https://huggingface.co/datasets/KaiChen1998/coda-lm/tree/main/CODA-LM/Test)!
-
-
 
 ## Data Preparation
 
