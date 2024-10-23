@@ -1,5 +1,5 @@
 # CODA-LM
-[![arXiv](https://img.shields.io/badge/arXiv-2404.10595-b31b1b.svg?style=plastic)](https://arxiv.org/abs/2404.10595) [![arXiv](https://img.shields.io/badge/Web-CODA_LM-blue.svg?style=plastic)](https://coda-dataset.github.io/coda-lm/)
+[![arXiv](https://img.shields.io/badge/arXiv-2404.10595-b31b1b.svg?style=plastic)](https://arxiv.org/abs/2404.10595) [![Web](https://img.shields.io/badge/Web-CODA_LM-blue.svg?style=plastic)](https://coda-dataset.github.io/coda-lm/)[![HF](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/datasets/KaiChen1998/coda-lm)
 
 This repository contains the implementation of the paper:
 
@@ -10,6 +10,11 @@ This repository contains the implementation of the paper:
 <p align="center">
   <img src="./images/overview.png" style="width: 65%; margin: 0 auto; text-align: center"/>
 </p>
+# Update
+
+- **2024.10**: CODA-LM Test set annotations have been released on [HuggingFace](https://huggingface.co/datasets/KaiChen1998/coda-lm/tree/main/CODA-LM/Test)!
+
+
 
 ## Data Preparation
 
