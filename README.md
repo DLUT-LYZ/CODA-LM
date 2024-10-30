@@ -15,6 +15,7 @@ This repository contains the implementation of the paper:
 ## Update
 
 - **2024.10**: CODA-LM Test set annotations have been released on [HuggingFace](https://huggingface.co/datasets/KaiChen1998/coda-lm/tree/main/CODA-LM/Test)!
+- **2024.10**: CODA-LM has been accepted by WACV 2025!
 
 ## Data Preparation
 
