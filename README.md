@@ -96,7 +96,15 @@ The annotation files contains question-answering pairs for all three tasks as fo
 
 ### ✨ LLaVA Format
 
-To better facilitate training LVLMs with CODA-LM, we further organize the CODA-LM data in the LLaVA data format, based on which, we can use CODA-LM simply by utilizing the HuggingFace APIs. Note that by default, we adopt the **red rectangle prompt** for the regional perception task.
+To better facilitate training LVLMs with CODA-LM, we further organize the CODA-LM data in the LLaVA data format, based on which, we can use CODA-LM simply by utilizing the HuggingFace APIs. 
+
+1. Install the HuggingFace datasets dependency via pip.
+
+   ```bash
+   pip install datasets
+   ```
+
+2. Download and load the specified subsets and splits of CODA-LM. Note that by default, we adopt the **red rectangle prompt** for the regional perception task.
 
 ```python
 from datasets import load_dataset
