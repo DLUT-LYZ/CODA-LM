@@ -1,12 +1,12 @@
 # CODA-LM
-[![arXiv](https://img.shields.io/badge/arXiv-2404.10595-b31b1b.svg?style=plastic)](https://arxiv.org/abs/2404.10595) [![Web](https://img.shields.io/badge/Web-CODA_LM-blue.svg?style=plastic)](https://coda-dataset.github.io/coda-lm/) [![HF](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow?style=plastic)](https://huggingface.co/datasets/KaiChen1998/coda-lm)
+[![arXiv](https://img.shields.io/badge/arXiv-2404.10595-b31b1b.svg?style=plastic)](https://arxiv.org/abs/2404.10595) [![Web](https://img.shields.io/badge/Web-CODA_LM-blue.svg?style=plastic)](https://coda-dataset.github.io/coda-lm/) [![HF](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow?style=plastic)](https://huggingface.co/collections/KaiChen1998/coda-lm-6726500ab7d88dbcf9dc3fd0)
 
 This repository contains the implementation of the paper:
 
 > Automated Evaluation of Large Vision-Language Models on Self-driving Corner Cases <br>
 > [Kai Chen](https://kaichen1998.github.io)\*, [Yanze Li]()\*, [Wenhua Zhang]()\*, [Yanxin Liu](), [Pengxiang Li](https://scholar.google.com/citations?user=rUp_4RgAAAAJ&hl=en), [Ruiyuan Gao](https://gaoruiyuan.com/), [Lanqing Hong](https://scholar.google.com.sg/citations?user=2p7x6OUAAAAJ&hl=en)†, [Meng Tian](), [Xinhai Zhao](), [Zhenguo Li](https://scholar.google.com/citations?user=XboZC1AAAAAJ&hl=en&oi=ao), [Dit-Yan Yeung](https://sites.google.com/view/dyyeung), [Huchuan Lu](https://scholar.google.com/citations?user=D3nE0agAAAAJ&hl=en), [Xu Jia](https://stephenjia.github.io/)† <br>
 > *Equal Contribution   †Corresponding Authors
-> <br>*IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)*, 2025
+> <br>*IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2025*
 
 <p align="center">
   <img src="./images/overview.png" style="width: 65%; margin: 0 auto; text-align: center"/>
@@ -14,6 +14,7 @@ This repository contains the implementation of the paper:
 
 ## Update
 
+- **2024.11**: CODA-LM in the LLaVA data format has been released on [HuggingFace](https://huggingface.co/datasets/KaiChen1998/coda-lm-llava-format)!
 - **2024.10**: CODA-LM Test set annotations have been released on [HuggingFace](https://huggingface.co/datasets/KaiChen1998/coda-lm/tree/main/CODA-LM/Test)!
 - **2024.10**: CODA-LM has been accepted by WACV 2025!
 
@@ -22,14 +23,14 @@ This repository contains the implementation of the paper:
 The instructions for downloading CODA-LM are listed as follows:
 
 1. Download the image files following the CODA official instructions [here](https://coda-dataset.github.io/download.html#instructions)
-2. Download the CODA-LM annotation files and then decompress them in the same root directory.
+2. Download the **original** CODA-LM annotation files and then decompress them in the same root directory.
 
-| Split | Size | Image Source  |  Download  |
-| :---: | :--: | :-----------: | :--------: |
-| Train | 4884 | CODA2022 val  | [HF Hub](https://huggingface.co/datasets/KaiChen1998/coda-lm) |
-|  Val  | 4384 | CODA2022 test | [HF Hub](https://huggingface.co/datasets/KaiChen1998/coda-lm) |
-| Test  | 500  | CODA2022 test | [HF Hub](https://huggingface.co/datasets/KaiChen1998/coda-lm) |
-| Mini  |  50  | CODA2022 test | [HF Hub](https://huggingface.co/datasets/KaiChen1998/coda-lm) |
+| Split | Size | Image Source  |                       Original Format                        | LLaVA Format                                                 |
+| :---: | :--: | :-----------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| Train | 4884 | CODA2022 val  | [HF Hub](https://huggingface.co/datasets/KaiChen1998/coda-lm) | [HF Hub](https://huggingface.co/datasets/KaiChen1998/coda-lm-llava-format) |
+|  Val  | 4384 | CODA2022 test | [HF Hub](https://huggingface.co/datasets/KaiChen1998/coda-lm) | [HF Hub](https://huggingface.co/datasets/KaiChen1998/coda-lm-llava-format) |
+| Test  | 500  | CODA2022 test | [HF Hub](https://huggingface.co/datasets/KaiChen1998/coda-lm) | [HF Hub](https://huggingface.co/datasets/KaiChen1998/coda-lm-llava-format) |
+| Mini  |  50  | CODA2022 test | [HF Hub](https://huggingface.co/datasets/KaiChen1998/coda-lm) | [HF Hub](https://huggingface.co/datasets/KaiChen1998/coda-lm-llava-format) |
 
 Note that:
 
@@ -92,6 +93,26 @@ The annotation files contains question-answering pairs for all three tasks as fo
 ```
 
 ## Data Usage
+
+### ✨ LLaVA Format
+
+To better facilitate training LVLMs with CODA-LM, we further organize the CODA-LM data in the LLaVA data format, based on which, we can use CODA-LM simply by utilizing the HuggingFace APIs. Note that by default, we adopt the **red rectangle prompt** for the regional perception task.
+
+```python
+from datasets import load_dataset
+
+# name can be selected from ['English', 'Chinese']
+# split can be selected from ['Mini', 'Train', 'Val', 'Test']
+dataset = load_dataset("KaiChen1998/coda-lm-llava-format", name="English", split='Train')
+
+# should be a dictionary containing
+# {"id": sample identification, 'image': PIL Image, 'conversations': with <image> token}
+for data in dataset:
+    print(data)
+```
+
+### Original Format
+
 To help users better understand the structure of CODA-LM, we provide a python script to convert our annotations to basic VQA formats, as follows:
 
 1. Download the data and make sure the directory organization follows [Data Prepration](https://github.com/DLUT-LYZ/CODA-LM?tab=readme-ov-file#data-preparation).
