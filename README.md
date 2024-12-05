@@ -57,7 +57,18 @@ After decompression, the data organization is listed as follows:
 │   │   │── test_*.json
 ```
 
+## Task Hierarchy
 
+<p align="center">
+  <img src="./images/tasks.PNG" style="width: 30%; margin: 0 auto; text-align: center"/>
+</p>
+
+CODA-LM contains three tasks to promote the development of more reliable and interpretable autonomous driving agents.
+- **General Perception.**  The foundational aspect of the general perception task lies in the comprehensive understanding of key entities within driving scenes, including the appearance, location, and the reasons they influence driving. Given a first-view road driving scene, MLLMs are required to describe all the potential road obstacles in the traffic scenes and explain why they would affect the driving decisions. We primarily focus on seven categories of obstacles, including vehicles, vulnerable road users (VRUs), traffic cones, traffic lights, traffic signs, barriers, and miscellaneous.
+
+- **Region Perception.**  This task measures the MLLMs' capability to understand corner objects when provided with specific bounding boxes, followed by describing these objects and explaining why they might affect self-driving behavior. Note that for region perception, there are no constraints on how to use bounding boxes in MLLMs. Any possible encoding leading to better performance is feasible. We provide an example by visualizing the bounding boxes on images with red rectangles here for reference.
+
+- **Driving Suggestions.**  This task aims to evaluate MLLMs' capability in formulating driving advice in the autonomous driving domain. This task is closely related to the planning process of autonomous driving, requiring MLLMs to provide optimal driving suggestions for the ego car after correctly perceiving the general and regional aspects of the current driving environment.
 
 ## Data Format
 
